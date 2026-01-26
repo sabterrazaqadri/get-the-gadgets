@@ -1,0 +1,30 @@
+{
+  "root": true,
+  "project": {
+    "name": "Get the Gadgets",
+    "studioHost": "get-the-gadgets" // TO BE UPDATED WITH NEW HOST NAME IF NEEDED
+  },
+  "api": {
+    "projectId": "s8dt44uu", // New project ID
+    "dataset": "production"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool"
+  ],
+  "env": {
+    "development": {
+      "api": {
+        "dataset": "production"
+      }
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema"
+    }
+  ]
+}

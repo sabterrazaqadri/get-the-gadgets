@@ -1,0 +1,40 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Get the Gadgets - Fashion Ecommerce Site",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [
+    "nextjs",
+    "sanity",
+    "ecommerce",
+    "fashion"
+  ],
+  "author": "Get the Gadgets",
+  "license": "MIT",
+  "dependencies": {
+    "@sanity/icons": "2.8",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.26.1",
+    "@types/node": "^20.11.17",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "next": "^14.1.0",
+    "next-sanity": "^7.1.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sanity": "^3.26.1",
+    "styled-components": "^6.2.0",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1"
+  }
+}

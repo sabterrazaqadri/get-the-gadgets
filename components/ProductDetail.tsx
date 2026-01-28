@@ -105,12 +105,12 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
             </div>
           )}
 
-          <div className="mb-4">
+          {/* <div className="mb-4">
             <h3 className="font-semibold mb-1">Fabric</h3>
             <p>{product.fabric}</p>
-          </div>
+          </div> */}
 
-          <div className="mb-4">
+          {/* <div className="mb-4">
             <h3 className="font-semibold mb-1">Select Size</h3>
             <div className="flex flex-wrap gap-2">
               {product.sizes && product.sizes.length > 0 ? (
@@ -131,7 +131,7 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
                 <p className="text-gray-500 italic">No sizes available for this product</p>
               )}
             </div>
-          </div>
+          </div> */}
 
           {product.availability !== undefined && (
             <div className="mb-4">

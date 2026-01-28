@@ -39,7 +39,7 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
     : undefined;
 
   // Generate WhatsApp URL
-  const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(`I'm interested in ${product.title} - Rs. ${product.salePrice || product.price}. Check it out: ${typeof window !== 'undefined' ? window.location.origin : ''}/products/${product.slug.current}`)}`;
+  const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(`I'm interested in ${product.title} - Rs. ${product.salePrice || product.price}. Check it out: ${typeof window !== 'undefined' ? window.location.origin : ''}/products/${product.slug.current}`)}`;
 
   return (
     <div className="container mx-auto px-4 py-8">

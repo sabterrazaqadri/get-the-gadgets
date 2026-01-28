@@ -1,1 +1,41 @@
+# Dependencies
 node_modules/
+
+# Build outputs
+.next/
+dist/
+build/
+.nyc_output/
+coverage/
+out/
+
+# Environment variables
+.env*
+!.env.example
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sanity
+.sanity/
+sanity/dist/
+sanity/.sanity/
+
+# Temporary files
+*.tmp
+*.temp
+check-slugs.js
+test-sanity-connection.js

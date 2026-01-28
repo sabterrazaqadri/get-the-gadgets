@@ -2,6 +2,7 @@ import Layout from './layout';
 import { client, urlForImage } from '../lib/client';
 import Link from 'next/link';
 import Image from 'next/image';
+import ProductCarousel from '../components/ProductCarousel';
 
 // Fetch collections from Sanity
 async function getCollections() {
@@ -17,10 +18,29 @@ async function getCollections() {
   return collections;
 }
 
+// Fetch products from Sanity
+async function getProducts() {
+  const query = `*[_type == "product"]{
+    _id,
+    title,
+    slug,
+    price,
+    salePrice,
+    images
+  }`;
+
+  const products = await client.fetch(query);
+  return products;
+}
+
 export const revalidate = 60; // Revalidate every 60 seconds
 
 export default async function HomePage() {
   const collections = await getCollections();
+  const products = await getProducts();
+
+  // Limit to 6 products for the carousel
+  const featuredProducts = products.slice(0, 6);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -59,7 +79,12 @@ export default async function HomePage() {
         </div>
       </div>
 
-      <div className="text-center">
+      {/* Product Carousel Section */}
+      {featuredProducts.length > 0 && (
+        <ProductCarousel products={featuredProducts} />
+      )}
+
+      <div className="text-center mt-12">
         <Link
           href="/products"
           className="inline-block bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition-colors"

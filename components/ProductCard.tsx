@@ -49,7 +49,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
       </Link>
       <div className="p-4">
         <Link href={`/products/${product.slug.current}`}>
-          <h3 className="font-medium text-lg mb-1 hover:text-gray-600">{product.title}</h3>
+          <h3 className="font-medium text-lg mb-1 line-clamp-1 hover:text-gray-600">{product.title}</h3>
         </Link>
         <div className="flex items-center justify-between">
           <div>

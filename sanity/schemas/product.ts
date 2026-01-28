@@ -31,19 +31,19 @@ export default defineType({
       title: 'Sale Price',
       type: 'number',
     }),
-    defineField({
-      name: 'sizes',
-      title: 'Sizes',
-      type: 'array',
-      of: [{ type: 'string' }],
-      validation: (Rule) => Rule.required().min(1),
-    }),
-    defineField({
-      name: 'fabric',
-      title: 'Fabric',
-      type: 'string',
-      validation: (Rule) => Rule.required().min(5),
-    }),
+    // defineField({
+    //   name: 'sizes',
+    //   title: 'Sizes',
+    //   type: 'array',
+    //   of: [{ type: 'string' }],
+    //   validation: (Rule) => Rule.required().min(1),
+    // }),
+    // defineField({
+    //   name: 'fabric',
+    //   title: 'Fabric',
+    //   type: 'string',
+    //   validation: (Rule) => Rule.required().min(5),
+    // }),
     defineField({
       name: 'images',
       title: 'Images',

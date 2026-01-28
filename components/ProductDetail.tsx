@@ -12,8 +12,8 @@ interface Product {
   };
   price: number;
   salePrice?: number;
-  sizes: string[];
-  fabric: string;
+  sizes?: string[] | null;
+  fabric?: string;
   images: Array<{
     asset: {
       _ref: string;
@@ -22,7 +22,7 @@ interface Product {
   description?: string;
   careInstructions?: string;
   category?: string;
-  availability?: string;
+  availability?: boolean;
 }
 
 interface ProductDetailProps {
@@ -113,26 +113,30 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
           <div className="mb-4">
             <h3 className="font-semibold mb-1">Select Size</h3>
             <div className="flex flex-wrap gap-2">
-              {product.sizes.map((size, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setSelectedSize(size)}
-                  className={`px-4 py-2 border ${
-                    selectedSize === size
-                      ? 'border-black bg-black text-white'
-                      : 'border-gray-300'
-                  }`}
-                >
-                  {size}
-                </button>
-              ))}
+              {product.sizes && product.sizes.length > 0 ? (
+                product.sizes.map((size, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setSelectedSize(size)}
+                    className={`px-4 py-2 border ${
+                      selectedSize === size
+                        ? 'border-black bg-black text-white'
+                        : 'border-gray-300'
+                    }`}
+                  >
+                    {size}
+                  </button>
+                ))
+              ) : (
+                <p className="text-gray-500 italic">No sizes available for this product</p>
+              )}
             </div>
           </div>
 
-          {product.availability && (
+          {product.availability !== undefined && (
             <div className="mb-4">
               <h3 className="font-semibold mb-1">Availability</h3>
-              <p>{product.availability}</p>
+              <p>{product.availability ? 'In Stock' : 'Out of Stock'}</p>
             </div>
           )}
 

@@ -38,4 +38,4 @@ sanity/.sanity/
 *.tmp
 *.temp
 check-slugs.js
-test-sanity-connection.js
+test-sanity-connection.js".next/"  

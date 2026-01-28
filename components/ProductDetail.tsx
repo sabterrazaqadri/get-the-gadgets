@@ -35,11 +35,11 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
 
   // Set the first image as the display image
   const imageUrl = product.images && product.images.length > 0
-    ? urlForImage(product.images[selectedImageIndex], 600, 600)
+    ? urlForImage(product.images[selectedImageIndex].asset, 600, 600)
     : undefined;
 
   // Generate WhatsApp URL
-  const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(`I'm interested in ${product.title} - Rs. ${product.salePrice || product.price}. Check it out: ${typeof window !== 'undefined' ? window.location.origin : ''}/products/${product.slug.current}`)}`;
+  const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(`I'm interested in ${product.title} - Rs. ${product.salePrice || product.price}. Check it out: ${typeof window !== 'undefined' ? window.location.origin : ''}/products/${product.slug.current}`)}`;
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -72,7 +72,7 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
                 }`}
               >
                 <Image
-                  src={urlForImage(img, 80, 80) || ''}
+                  src={urlForImage(img.asset, 80, 80)}
                   alt={`${product.title} thumbnail ${idx + 1}`}
                   width={80}
                   height={80}
